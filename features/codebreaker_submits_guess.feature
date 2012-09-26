@@ -4,6 +4,9 @@ Feature: code-breaker submits guess
 
 	For each number in the guess that matches the number and position of a number in the secret code, the mark includes one + sign. For each number in the guess that matches the number but not the position of a number in the secret code, the mark includes one - sign.
 
+	Each position in the secret code can only be matched once. For example, a guess of 1134 against a secret code of 1234 would get three plus signs: one each for the exact matches in the first, third and fourth positions. The number match in the second position would be ignored.
+
+
 	Scenario Outline: submit guess
 	Given the secret code is "<code>"
 	When I guess "<guess>"
